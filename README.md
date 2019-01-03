@@ -34,3 +34,45 @@ git config --global alias.ls 'log --graph --pretty=format:"%h <%an> %ar %s"' == 
 | mv | 移動檔案 |
 | rm | 刪除檔案 |
 | clear | 清除畫面上的內容 |
+
+<br>
+
+# Git新增資料夾、檔案
+```
+cd /tmp - 切換至tmp目錄
+mkdir newFolder - 建立 newFolder 目錄
+cd newFolder - 切換至 newFolder 目錄
+git init - 初始化 newFolder 目錄, 讓Git對newFolder進行版控
+git st - 查詢newFolder目錄的狀態
+
+echo "hello world, git" > welcome.html - 建立hello world, git內容，儲存為welcome.html檔案
+```
+
+> 檔案交給Git
+
+git add welcome.html - 將檔案放置暫存區<br>
+git add \*.html <br>
+git add --all <br>
+git commit -m "init commit" - 將存放暫存區的檔案放置儲存庫(Repository) <br>
+git commit --allow-empty -m "space" - 空值commit <br>
+
+> Git操作圖
+![image](https://gitbook.tw/images/using-git/working-staging-and-repository/all-states.png) <br>
+
+> 直接將檔案add、commit
+```
+git commit -a -m "welcome.html"
+```
+> 檢視Git紀錄
+```
+git log
+commit bddsfrefffffffff4 (HEAD -> master)
+Author: username <username@gmail.com>
+Date:   Thu Jan 3 22:28:03 2019 +0800
+
+    init commit
+```
+or
+```
+git log --online --graph
+```

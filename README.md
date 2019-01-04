@@ -76,3 +76,62 @@ or
 ```
 git log --online --graph
 ```
+<br>
+
+# 查找commit人名
+```
+git log --oneline --author="username"
+git log --oneline --author="username\|username2" - 同時查找2個人
+```
+
+# 查找commit內容
+```
+git log --oneline --grep="handsomeboy"
+```
+
+# 查找commit檔案內容
+```
+git log -S "superman"
+```
+
+# 查找commit時間
+```
+git log --oneline --since="9am" --until="12am"
+got log --oneline --since="9am" --until="12am" --after="2017-01"
+```
+
+# Git刪除檔案
+```
+rm welcome.html
+git add welcome.html - 將此次的修改加入暫存區
+git rm welcome.html
+```
+
+# 移除Git控管
+```
+git rm welcome --cached
+```
+
+# 變更檔名
+```
+mv welcome.html hello.html
+git add --all
+git st
+```
+
+# Git變更檔名(較快)
+```
+git mv index.html hello.html
+git st
+```
+
+# 修改commit後的紀錄
+```
+git commit --amend -m "Superman" - 修改最後一次commit的內容
+```
+
+# commit後需再追加檔案
+```
+git add forgetCommitFile.html
+git commit --amend --no-edit - --no-edit參數意思是我不要編輯commit訊息
+```
